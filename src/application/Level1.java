@@ -60,6 +60,11 @@ public class Level1 {
 					GameController.moveGhost2();
 					GameController.killcheck();
 					ArrayList<Entity> allEntity = GameController.getCurrentMap().getAllEntity();
+					if(GameController.isStart()) {
+						GameController.setPacmanDirection(GameController.getTargetDirection());
+					}else if(GameController.getPacmanFrame() % 12 == 0) {
+						GameController.setPacmanDirection(GameController.getTargetDirection());
+					}
 					Platform.runLater(new Runnable() {
 						@Override
 						public void run() {
@@ -160,30 +165,34 @@ public class Level1 {
 			switch (keycode) {
 			case A:
 				try {
-					GameController.setPacmanDirection(Direction.LEFT);
+					GameController.setPacmanTargetDirection(Direction.LEFT);
 				} catch (samePacmanDirectionException e) {
 					// TODO Auto-generated catch block
+					
 				}
 				break;
 			case D:
 				try {
-					GameController.setPacmanDirection(Direction.RIGHT);
+					GameController.setPacmanTargetDirection(Direction.RIGHT);
 				} catch (samePacmanDirectionException e) {
 					// TODO Auto-generated catch block
+					
 				}
 				break;
 			case W:
 				try {
-					GameController.setPacmanDirection(Direction.UP);
+					GameController.setPacmanTargetDirection(Direction.UP);
 				} catch (samePacmanDirectionException e) {
 					// TODO Auto-generated catch block
+					
 				}
 				break;
 			case S:
 				try {
-					GameController.setPacmanDirection(Direction.DOWN);
+					GameController.setPacmanTargetDirection(Direction.DOWN);
 				} catch (samePacmanDirectionException e) {
 					// TODO Auto-generated catch block
+					
 				}
 				break;
 			case R:

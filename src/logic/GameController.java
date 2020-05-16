@@ -16,11 +16,13 @@ public class GameController {
 
 	private static int score;
 	
-	private static boolean ghost1pacman = false;
+	private static boolean ghost1MeetPacman = false;
 	
-	private static boolean ghost2pacman = false;
+	private static boolean ghost2MeetPacman = false;
 
 	private static int scorePoint;
+	
+	private static Direction targetDirection = Direction.NONE;
 
 	private static boolean win;
 
@@ -73,7 +75,7 @@ public class GameController {
 			setStart(false);
 			pacman.setFrame(0);
 		}
-		if(pacman.getFrame() % 3 == 0) {
+		if(pacman.getFrame() % 12 == 0) {
 			setPacmanMouthOpen(!isPacmanMouthOpen());
 		}
 		pacman.move();
@@ -115,53 +117,53 @@ public class GameController {
 
 	public static void moveGhost1() {
 		if (isPowerUp() == false) {
-			if (ghost1.getX() == pacman.getX() && (ghost1pacman == false)) {
+			if (ghost1.getX() == pacman.getX() && (ghost1MeetPacman == false)) {
 				if (ghost1.getY() > pacman.getY()) {
 					setGhost1Direction(Direction.UP);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				} else {
 					setGhost1Direction(Direction.DOWN);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				}
-				ghost1pacman = true;
-			} else if (ghost1.getY() == pacman.getY() && (ghost1pacman == false)) {
+				ghost1MeetPacman = true;
+			} else if (ghost1.getY() == pacman.getY() && (ghost1MeetPacman == false)) {
 				if (ghost1.getX() > pacman.getX()) {
 					setGhost1Direction(Direction.LEFT);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				} else {
 					setGhost1Direction(Direction.RIGHT);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				}
 			} else if ((ghost1.getY() != pacman.getY()) && (ghost1.getX() != pacman.getX())){
-				ghost1pacman = false;
+				ghost1MeetPacman = false;
 			}
 		} else {
-			if (ghost1.getX() == pacman.getX() && (ghost1pacman == false)) {
+			if (ghost1.getX() == pacman.getX() && (ghost1MeetPacman == false)) {
 				if (ghost1.getY() > pacman.getY()) {
 					setGhost1Direction(Direction.DOWN);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				} else {
 					setGhost1Direction(Direction.UP);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				}
-			} else if (ghost1.getY() == pacman.getY() && (ghost1pacman == false)) {
+			} else if (ghost1.getY() == pacman.getY() && (ghost1MeetPacman == false)) {
 				if (ghost1.getX() > pacman.getX()) {
 					setGhost1Direction(Direction.RIGHT);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				} else {
 					setGhost1Direction(Direction.LEFT);
 					ghost1.setFrame(0);
-					ghost1pacman = true;
+					ghost1MeetPacman = true;
 				}
 			} else if ((ghost1.getY() != pacman.getY()) && (ghost1.getX() != pacman.getX())){
-				ghost1pacman = false;
+				ghost1MeetPacman = false;
 			}
 		}
 		moveGhost1R();
@@ -186,52 +188,52 @@ public class GameController {
 
 	public static void moveGhost2() {
 		if (isPowerUp() == false) {
-			if (ghost2.getX() == pacman.getX() && (ghost2pacman == false)) {
+			if (ghost2.getX() == pacman.getX() && (ghost2MeetPacman == false)) {
 				if (ghost2.getY() > pacman.getY()) {
 					setGhost2Direction(Direction.UP);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				} else {
 					setGhost2Direction(Direction.DOWN);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				}
-			} else if (ghost2.getY() == pacman.getY() && (ghost2pacman == false)) {
+			} else if (ghost2.getY() == pacman.getY() && (ghost2MeetPacman == false)) {
 				if (ghost2.getX() > pacman.getX()) {
 					setGhost2Direction(Direction.LEFT);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				} else {
 					setGhost2Direction(Direction.RIGHT);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				}
 			} else if (ghost2.getX() != pacman.getX() && ghost2.getY() != pacman.getY()) {
-				ghost2pacman=true;
+				ghost2MeetPacman=false;
 			}
 		} else {
-			if (ghost2.getX() == pacman.getX() && (ghost2pacman == false)) {
+			if (ghost2.getX() == pacman.getX() && (ghost2MeetPacman == false)) {
 				if (ghost2.getY() > pacman.getY()) {
 					setGhost2Direction(Direction.DOWN);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				} else {
 					setGhost2Direction(Direction.UP);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				}
-			} else if (ghost2.getY() == pacman.getY() && (ghost2pacman == false)) {
+			} else if (ghost2.getY() == pacman.getY() && (ghost2MeetPacman == false)) {
 				if (ghost2.getX() > pacman.getX()) {
 					setGhost2Direction(Direction.RIGHT);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				} else {
 					setGhost2Direction(Direction.LEFT);
 					ghost2.setFrame(0);
-					ghost2pacman=true;
+					ghost2MeetPacman=true;
 				}
 			} else if (ghost2.getX() != pacman.getX() && ghost2.getY() != pacman.getY()) {
-				ghost2pacman=true;
+				ghost2MeetPacman=false;
 			}
 		}
 		moveGhost2R();
@@ -257,13 +259,9 @@ public class GameController {
 		return pacman.getDirection();
 	}
 
-	public static void setPacmanDirection(Direction dir) throws samePacmanDirectionException {
-		if(dir == pacman.getDirection()) {
-			throw new samePacmanDirectionException();
-		}else {
-			pacman.setDirection(dir);
-			pacman.setFrame(0);
-		}
+	public static void setPacmanDirection(Direction dir){
+		pacman.setDirection(dir);
+		pacman.setFrame(0);
 	}
 
 	public static Direction getGhost1Direction() {
@@ -412,5 +410,17 @@ public class GameController {
 	
 	public static boolean pacmanMovePossible(Direction dir) {
 		return pacman.movePossible(dir);
+	}
+	
+	public static void setPacmanTargetDirection(Direction dir) throws samePacmanDirectionException {
+		if(dir == pacman.getDirection()) {
+			throw new samePacmanDirectionException();
+		}else {
+			targetDirection = dir;
+		}
+	}
+	
+	public static Direction getTargetDirection() {
+		return targetDirection;
 	}
 }
