@@ -402,8 +402,12 @@ public class GameController {
 		return pacman.getFrame();
 	}
 	
-	public static int getGhostFrame() {
+	public static int getGhost1Frame() {
 		return ghost1.getFrame();
+	}
+	
+	public static int getGhost2Frame() {
+		return ghost2.getFrame();
 	}
 	
 	public static boolean pacmanMovePossible(Direction dir) {

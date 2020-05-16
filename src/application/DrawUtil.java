@@ -63,46 +63,70 @@ public class DrawUtil {
 		}
 	}
 	
-	public static void drawGhost(GraphicsContext gc, int x, int y, int index, Direction dir) {
+	public static void drawGhost(GraphicsContext gc, int x, int y, int index, Direction dir , int ghost) {
 		if(index == 2) {
-			if(dir == Direction.RIGHT) {
-				gc.drawImage(blueghostsprites, x + (2*GameController.getGhostFrame()), y);
-			} else if(dir == Direction.LEFT) {
-				gc.drawImage(blueghostsprites, x - (2*GameController.getGhostFrame()), y);
-			} else if(dir == Direction.UP) {
-				gc.drawImage(blueghostsprites, x, y - (2*GameController.getGhostFrame()));
-			} else if(dir == Direction.DOWN) {
-				gc.drawImage(blueghostsprites, x, y + (2*GameController.getGhostFrame()));
+			if(ghost == 1) {
+				if(dir == Direction.RIGHT) {
+					gc.drawImage(blueghostsprites, x + (2*GameController.getGhost1Frame()), y);
+				} else if(dir == Direction.LEFT) {
+					gc.drawImage(blueghostsprites, x - (2*GameController.getGhost1Frame()), y);
+				} else if(dir == Direction.UP) {
+					gc.drawImage(blueghostsprites, x, y - (2*GameController.getGhost1Frame()));
+				} else if(dir == Direction.DOWN) {
+					gc.drawImage(blueghostsprites, x, y + (2*GameController.getGhost1Frame()));
+				}
+			} else if(ghost == 2) {
+				if(dir == Direction.RIGHT) {
+					gc.drawImage(blueghostsprites, x + (2*GameController.getGhost2Frame()), y);
+				} else if(dir == Direction.LEFT) {
+					gc.drawImage(blueghostsprites, x - (2*GameController.getGhost2Frame()), y);
+				} else if(dir == Direction.UP) {
+					gc.drawImage(blueghostsprites, x, y - (2*GameController.getGhost2Frame()));
+				} else if(dir == Direction.DOWN) {
+					gc.drawImage(blueghostsprites, x, y + (2*GameController.getGhost2Frame()));
+				}
 			}
 		} else if (index == 3) {
-			if(dir == Direction.RIGHT) {
-				gc.drawImage(blinkghostsprites, x + (2*GameController.getGhostFrame()), y);
-			} else if(dir == Direction.LEFT) {
-				gc.drawImage(blinkghostsprites, x - (2*GameController.getGhostFrame()), y);
-			} else if(dir == Direction.UP) {
-				gc.drawImage(blinkghostsprites, x, y - (2*GameController.getGhostFrame()));
-			} else if(dir == Direction.DOWN) {
-				gc.drawImage(blinkghostsprites, x, y + (2*GameController.getGhostFrame()));
+			if(ghost ==1) {
+				if(dir == Direction.RIGHT) {
+					gc.drawImage(blinkghostsprites, x + (2*GameController.getGhost1Frame()), y);
+				} else if(dir == Direction.LEFT) {
+					gc.drawImage(blinkghostsprites, x - (2*GameController.getGhost1Frame()), y);
+				} else if(dir == Direction.UP) {
+					gc.drawImage(blinkghostsprites, x, y - (2*GameController.getGhost1Frame()));
+				} else if(dir == Direction.DOWN) {
+					gc.drawImage(blinkghostsprites, x, y + (2*GameController.getGhost1Frame()));
+				}
+			} else if(ghost ==2) {
+				if(dir == Direction.RIGHT) {
+					gc.drawImage(blinkghostsprites, x + (2*GameController.getGhost2Frame()), y);
+				} else if(dir == Direction.LEFT) {
+					gc.drawImage(blinkghostsprites, x - (2*GameController.getGhost2Frame()), y);
+				} else if(dir == Direction.UP) {
+					gc.drawImage(blinkghostsprites, x, y - (2*GameController.getGhost2Frame()));
+				} else if(dir == Direction.DOWN) {
+					gc.drawImage(blinkghostsprites, x, y + (2*GameController.getGhost2Frame()));
+				}
 			}
 		} else if (index == 4) {
 			if(dir == Direction.RIGHT) {
-				gc.drawImage(ghost1sprites, x + (2*GameController.getGhostFrame()), y);
+				gc.drawImage(ghost1sprites, x + (2*GameController.getGhost1Frame()), y);
 			} else if(dir == Direction.LEFT) {
-				gc.drawImage(ghost1sprites, x - (2*GameController.getGhostFrame()), y);
+				gc.drawImage(ghost1sprites, x - (2*GameController.getGhost1Frame()), y);
 			} else if(dir == Direction.UP) {
-				gc.drawImage(ghost1sprites, x, y - (2*GameController.getGhostFrame()));
+				gc.drawImage(ghost1sprites, x, y - (2*GameController.getGhost1Frame()));
 			} else if(dir == Direction.DOWN) {
-				gc.drawImage(ghost1sprites, x, y + (2*GameController.getGhostFrame()));
+				gc.drawImage(ghost1sprites, x, y + (2*GameController.getGhost1Frame()));
 			}
 		} else if (index == 5) {
 			if(dir == Direction.RIGHT) {
-				gc.drawImage(ghost2sprites, x + (2*GameController.getGhostFrame()), y);
+				gc.drawImage(ghost2sprites, x + (2*GameController.getGhost2Frame()), y);
 			} else if(dir == Direction.LEFT) {
-				gc.drawImage(ghost2sprites, x - (2*GameController.getGhostFrame()), y);
+				gc.drawImage(ghost2sprites, x - (2*GameController.getGhost2Frame()), y);
 			} else if(dir == Direction.UP) {
-				gc.drawImage(ghost2sprites, x, y - (2*GameController.getGhostFrame()));
+				gc.drawImage(ghost2sprites, x, y - (2*GameController.getGhost2Frame()));
 			} else if(dir == Direction.DOWN) {
-				gc.drawImage(ghost2sprites, x, y + (2*GameController.getGhostFrame()));
+				gc.drawImage(ghost2sprites, x, y + (2*GameController.getGhost2Frame()));
 			}
 		} 
 	}

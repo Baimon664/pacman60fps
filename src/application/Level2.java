@@ -105,9 +105,9 @@ public class Level2 {
 			y += 1;
 		}
 		DrawUtil.drawGhost(gc, draw_originx + GameController.getGhost1X() * 24,
-				draw_originy + GameController.getGhost1Y() * 24, GameController.getGhost1Sprite(),GameController.getGhost1Direction());
+				draw_originy + GameController.getGhost1Y() * 24, GameController.getGhost1Sprite(),GameController.getGhost1Direction(),1);
 		DrawUtil.drawGhost(gc, draw_originx + GameController.getGhost2X() * 24,
-				draw_originy + GameController.getGhost2Y() * 24, GameController.getGhost2Sprite(),GameController.getGhost2Direction());
+				draw_originy + GameController.getGhost2Y() * 24, GameController.getGhost2Sprite(),GameController.getGhost2Direction(),2);
 		DrawUtil.drawPacman(gc, draw_originx + GameController.getPacmanX() * 24,
 				draw_originy + GameController.getPacmanY() * 24, GameController.getPacmanDirection());
 		gc.setFill(Color.WHITE);
