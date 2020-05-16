@@ -133,11 +133,10 @@ public class Level2 {
 			getUpdate().suspend();
 		}
 		/* If win, draw Congrats */
-		if (GameController.getScore() == 0) {
+		if (GameController.isGameWin()) {
 			/* Darken the Screen */
 			Sound.stopWalkSound();
 			Sound.playWinSound();
-			GameController.setGameWin(true);
 			gc.setGlobalAlpha(0.8);
 			gc.setFill(Color.BLACK);
 			gc.fillRect(draw_originx, draw_originy, board_width, board_height);
@@ -146,6 +145,9 @@ public class Level2 {
 			/* Draw Congratulations */
 			DrawUtil.drawCongrats(gc, 360, 252);
 			getUpdate().suspend();
+		}
+		if(GameController.getScore() == 0) {
+			GameController.setGameWin(true);
 		}
 		/* Pause Game */
 		if (GameController.isGamePause()) {
@@ -200,6 +202,11 @@ public class Level2 {
 				Sound.stopWinSound();
 				Sound.stopWalkSound();
 				GameController.setStart(false);
+				try {
+					GameController.setPacmanTargetDirection(Direction.NONE);
+				} catch (samePacmanDirectionException e) {
+					// TODO Auto-generated catch block
+				}
 				GameController.IntializeMap(gameMap, 9, 13, 13, 10, 14, 10); // Reset Map
 				getUpdate().resume();
 				break;

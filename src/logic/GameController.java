@@ -423,4 +423,14 @@ public class GameController {
 	public static Direction getTargetDirection() {
 		return targetDirection;
 	}
+
+	public static void setGhost1MeetPacman(boolean ghost1MeetPacman) {
+		GameController.ghost1MeetPacman = ghost1MeetPacman;
+	}
+
+	public static void setGhost2MeetPacman(boolean ghost2MeetPacman) {
+		GameController.ghost2MeetPacman = ghost2MeetPacman;
+	}
+	
+	
 }

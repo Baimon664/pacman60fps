@@ -16,6 +16,8 @@ public class Point extends Entity implements Interactable {
 			this.remove();
 			GameController.setScorePoint(GameController.getScorePoint() + 100);
 			GameController.setScore(GameController.getScore() - 1);
+			GameController.setGhost1MeetPacman(false);
+			GameController.setGhost2MeetPacman(false);
 		}
 		return true;
 	}
