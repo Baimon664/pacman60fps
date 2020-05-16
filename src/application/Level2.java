@@ -133,7 +133,7 @@ public class Level2 {
 			getUpdate().suspend();
 		}
 		/* If win, draw Congrats */
-		if (GameController.isGameWin()) {
+		if ((GameController.isGameWin()) && (GameController.getPacmanFrame()%12 ==0)) {
 			/* Darken the Screen */
 			Sound.stopWalkSound();
 			Sound.playWinSound();

@@ -117,7 +117,7 @@ public class GameController {
 
 	public static void moveGhost1() {
 		if (isPowerUp() == false) {
-			if (ghost1.getX() == pacman.getX() && (ghost1MeetPacman == false)) {
+			if (ghost1.getX() == pacman.getX() && (ghost1MeetPacman == false) && (ghost1.getFrame()==0)) {
 				if (ghost1.getY() > pacman.getY()) {
 					setGhost1Direction(Direction.UP);
 					ghost1.setFrame(0);
@@ -128,7 +128,7 @@ public class GameController {
 					ghost1MeetPacman = true;
 				}
 				ghost1MeetPacman = true;
-			} else if (ghost1.getY() == pacman.getY() && (ghost1MeetPacman == false)) {
+			} else if (ghost1.getY() == pacman.getY() && (ghost1MeetPacman == false) && (ghost1.getFrame()==0)) {
 				if (ghost1.getX() > pacman.getX()) {
 					setGhost1Direction(Direction.LEFT);
 					ghost1.setFrame(0);
@@ -142,7 +142,7 @@ public class GameController {
 				ghost1MeetPacman = false;
 			}
 		} else {
-			if (ghost1.getX() == pacman.getX() && (ghost1MeetPacman == false)) {
+			if (ghost1.getX() == pacman.getX() && (ghost1MeetPacman == false) && (ghost1.getFrame()==0)) {
 				if (ghost1.getY() > pacman.getY()) {
 					setGhost1Direction(Direction.DOWN);
 					ghost1.setFrame(0);
@@ -152,7 +152,7 @@ public class GameController {
 					ghost1.setFrame(0);
 					ghost1MeetPacman = true;
 				}
-			} else if (ghost1.getY() == pacman.getY() && (ghost1MeetPacman == false)) {
+			} else if (ghost1.getY() == pacman.getY() && (ghost1MeetPacman == false) && (ghost1.getFrame()==0)) {
 				if (ghost1.getX() > pacman.getX()) {
 					setGhost1Direction(Direction.RIGHT);
 					ghost1.setFrame(0);
@@ -188,7 +188,7 @@ public class GameController {
 
 	public static void moveGhost2() {
 		if (isPowerUp() == false) {
-			if (ghost2.getX() == pacman.getX() && (ghost2MeetPacman == false)) {
+			if ((ghost2.getX() == pacman.getX()) && ((ghost2MeetPacman == false)) && (ghost2.getFrame()==0)) {
 				if (ghost2.getY() > pacman.getY()) {
 					setGhost2Direction(Direction.UP);
 					ghost2.setFrame(0);
@@ -198,7 +198,7 @@ public class GameController {
 					ghost2.setFrame(0);
 					ghost2MeetPacman=true;
 				}
-			} else if (ghost2.getY() == pacman.getY() && (ghost2MeetPacman == false)) {
+			} else if ((ghost2.getY() == pacman.getY()) && ((ghost2MeetPacman == false)) && (ghost2.getFrame()==0)) {
 				if (ghost2.getX() > pacman.getX()) {
 					setGhost2Direction(Direction.LEFT);
 					ghost2.setFrame(0);
@@ -208,11 +208,11 @@ public class GameController {
 					ghost2.setFrame(0);
 					ghost2MeetPacman=true;
 				}
-			} else if (ghost2.getX() != pacman.getX() && ghost2.getY() != pacman.getY()) {
+			} else if ((ghost2.getX() != pacman.getX()) && (ghost2.getY() != pacman.getY())) {
 				ghost2MeetPacman=false;
 			}
 		} else {
-			if (ghost2.getX() == pacman.getX() && (ghost2MeetPacman == false)) {
+			if ((ghost2.getX() == pacman.getX()) && ((ghost2MeetPacman == false)) && (ghost2.getFrame()==0)) {
 				if (ghost2.getY() > pacman.getY()) {
 					setGhost2Direction(Direction.DOWN);
 					ghost2.setFrame(0);
@@ -222,7 +222,7 @@ public class GameController {
 					ghost2.setFrame(0);
 					ghost2MeetPacman=true;
 				}
-			} else if (ghost2.getY() == pacman.getY() && (ghost2MeetPacman == false)) {
+			} else if ((ghost2.getY() == pacman.getY()) && ((ghost2MeetPacman == false)) && (ghost2.getFrame()==0)) {
 				if (ghost2.getX() > pacman.getX()) {
 					setGhost2Direction(Direction.RIGHT);
 					ghost2.setFrame(0);
@@ -232,7 +232,7 @@ public class GameController {
 					ghost2.setFrame(0);
 					ghost2MeetPacman=true;
 				}
-			} else if (ghost2.getX() != pacman.getX() && ghost2.getY() != pacman.getY()) {
+			} else if ((ghost2.getX() != pacman.getX()) && (ghost2.getY() != pacman.getY())) {
 				ghost2MeetPacman=false;
 			}
 		}
